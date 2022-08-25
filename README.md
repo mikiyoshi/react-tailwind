@@ -7,6 +7,40 @@ git config remote.origin.url
 git remote set-url origin https://github.com/mikiyoshi/react-tailwind.git
 ```
 
+# Deploy React App at Github pages
+
+[React App at Github pages](https://mikiyoshi.github.io/react-tailwind)
+
+- install gh-pages
+
+```
+npm install gh-pages --save-dev
+```
+
+- update package.json
+
+```
+  "homepage": "https://mikiyoshi.github.io/react-tailwind"
+
+```
+
+and
+
+```
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+```
+
+then
+
+```
+npm run deploy
+git add .
+git commit -m "Deploy"
+git push origin main
+```
+
 # HooBank - Modern UI/UX website using React.js & Tailwind CSS
 
 ![HooBank](https://i.ibb.co/BK1Hn0x/Screenshot-2022-08-08-at-4-05-48-PM.png)
