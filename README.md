@@ -24,7 +24,7 @@ npm install gh-pages --save-dev
 
 ```
 
-and
+and ????
 
 ```
   "scripts": {
@@ -32,22 +32,39 @@ and
     "deploy": "gh-pages -d build",
 ```
 
+- update vite.config.js // react-tailwind is your repo name
+  - [Deploy React at Github pages with vita](https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
+
+and
+
+```
+export default defineConfig({
+  base: '/react-tailwind/',
+  plugins: [react()],
+});
+```
+
 then
 
 ```
-npm run deploy
+npm run deploy ????
+npm run build
+git add dist -f
 git add .
 git commit -m "Deploy"
 git push origin main
+git subtree push --prefix dist origin gh-pages
 ```
 
 # Setup
+
+- type command in git repo name one folder above
 
 ```
 npm create vite@latest
 ```
 
-bank_modern_app
+react-tailwind // this is a same as git repo name and made a react setup files
 react
 
 ```
